@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+C:\dev_source\semiProject\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+222347595.index
+1733247848.index
+3417912708.index
+1125840767.index
+3345103838.index
+1379357268.index
+482261851.index

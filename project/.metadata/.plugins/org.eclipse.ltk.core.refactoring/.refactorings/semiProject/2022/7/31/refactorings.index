@@ -1,0 +1,79 @@
+1658980389137	Delete elements
+1658980431212	Delete element
+1658980618344	Delete element
+1658980856573	Delete element
+1658980936876	Rename type 'Stadium'
+1658980952576	Rename type 'Venue'
+1658981203250	Delete element
+1658981209201	Rename type 'StadiumDetail'
+1658987649595	Delete element
+1658989203178	Rename package 'semi.culture.mvc.member.vo'
+1658990193728	Rename package 'filter'
+1658990211572	Rename package 'jdbc'
+1658990388849	Delete elements
+1658990393413	Delete elements
+1658990424428	Rename package 'filter'
+1658990453034	Rename package 'jdbc'
+1658990575188	Delete element
+1658990619386	Rename package 'wrapper'
+1658990629054	Rename package 'controller'
+1658990641825	Rename package 'model'
+1658990655678	Rename package 'vo'
+1658990684458	Delete element
+1658990687861	Delete element
+1658990690844	Delete element
+1658990718698	Rename package 'controller'
+1658990742966	Rename package 'vo'
+1658990772089	Rename package 'vo'
+1658990802717	Rename package 'vo'
+1658990823482	Rename package 'dao'
+1658990845881	Rename package 'vo'
+1658992911763	Rename type 'VenueDetail'
+1658993542080	Delete element
+1658993551161	Rename type 'showVO'
+1659015791375	Delete elements
+1659015795509	Delete element
+1659015801053	Delete element
+1659015804238	Delete element
+1659016093961	Delete element
+1659016103295	Delete element
+1659016690476	Move 'header.jsp' to 'common'
+1659016692291	Move 'footer.jsp' to 'common'
+1659016759574	Move 'common' to 'views'
+1659016762023	Move 'main2.jsp' to 'webapp'
+1659016860915	Rename resource 'resource'
+1659072722860	Delete element
+1659072727644	Delete element
+1659072737283	Delete element
+1659072740169	Delete element
+1659072873184	Copy file
+1659073373843	Delete element
+1659074294966	Rename resource 'bookComplete.jsp'
+1659074298327	Rename resource 'bookComplete2.jsp'
+1659074301819	Rename resource 'bookComplete22.jsp'
+1659074374807	Rename resource 'index.jsp'
+1659076734568	Rename resource 'sign up.jsp'
+1659076744913	Rename resource 'sign_up.jsp'
+1659076775963	Delete element
+1659076809995	Delete element
+1659084538538	Rename package 'semi.culture.mvc.member.vo'
+1659084796334	Delete element
+1659084823732	Rename type 'showDao'
+1659085772821	Copy file
+1659085776291	Copy file
+1659086876661	Delete element
+1659086891917	Delete element
+1659105059670	Delete element
+1659113357165	Copy file
+1659132061339	Delete element
+1659176253942	Delete element
+1659176265132	Delete element
+1659189804913	Rename type 'ShowSearchMusicalServlet'
+1659208287978	Delete element
+1659208984697	Rename resource 'search.jsp'
+1659209522573	Rename type 'DramaListServlet'
+1659210185260	Delete element
+1659213914120	Copy compilation unit
+1659214125392	Copy file
+1659215867939	Copy compilation unit
+1659216142495	Copy file
