@@ -1,0 +1,195 @@
+
+--DROP TABLE TBL_Hall CASCADE CONSTRAINTS;
+--DROP TABLE TBL_Detail CASCADE CONSTRAINTS;
+--DROP TABLE TBL_Rank CASCADE CONSTRAINTS;
+
+DROP TABLE TBL_User CASCADE CONSTRAINTS;
+DROP TABLE TBL_Like CASCADE CONSTRAINTS;
+DROP TABLE TBL_Ticketing CASCADE CONSTRAINTS;
+DROP TABLE TBL_Seen CASCADE CONSTRAINTS;
+DROP TABLE TBL_Review CASCADE CONSTRAINTS;
+DROP TABLE TBL_Notice CASCADE CONSTRAINTS;
+DROP TABLE TBL_Question CASCADE CONSTRAINTS;
+DROP TABLE TBL_RCommnet CASCADE CONSTRAINTS;
+DROP TABLE TBL_QComment CASCADE CONSTRAINTS;
+
+
+--CREATE TABLE TBL_Hall ( 
+--	hall_id 	VARCHAR2(100) PRIMARY KEY,
+--	fcltynm	VARCHAR2(1000)	NULL,
+--	adres	VARCHAR2(1000)	NULL,
+--	seatscale NUMBER	NULL,
+--	relateurl	VARCHAR2(1000)	NULL,
+--	Telno	VARCHAR2(1000)	NULL,
+--	la	VARCHAR2(100)	NULL,
+--	lo	VARCHAR2(100)	NULL
+--);
+--
+--
+--CREATE TABLE TBL_Detail ( 
+--	prfid	VARCHAR2(100) 	PRIMARY KEY,
+--	hall_id VARCHAR2(100) 	NOT NULL,
+--	prfnm	 VARCHAR2(1000)	NULL,
+--	prfpdfrom VARCHAR2(1000)	NULL,
+--	prfpdto VARCHAR2(1000)	NULL,
+--	fcltynm VARCHAR2(1000)	NULL,
+--	prfcast VARCHAR2(1000)	NULL,
+--	prfruntime VARCHAR2(1000)	NULL,
+--	prfage VARCHAR2(1000)	NULL,
+--	pcseguidance VARCHAR2(1000)	NULL,
+--	genrenm  VARCHAR2(1000)	NULL,
+--	Timedtguidance	VARCHAR2(1000)	NULL,
+--	poster VARCHAR2(1000)	NULL,
+--	Sty	VARCHAR2(3000)	NULL,
+--	prfstate VARCHAR2(1000)	NULL,
+--	Styurls VARCHAR2(1000)	NULL,
+--    FOREIGN KEY (hall_id) REFERENCES TBL_Hall(hall_id)
+--);
+--
+--CREATE TABLE TBL_Rank ( 
+--	rank_id 	VARCHAR2(100) 	PRIMARY KEY,
+--	prfid	VARCHAR2(100)	NULL,
+--	prfnm	VARCHAR2(1000)	NULL,
+--	area	VARCHAR2(1000)	NULL,
+--	rnum	NUMBER 		NULL,
+--	prfdtcnt	NUMBER		NULL,
+--	prfpd	VARCHAR2(1000)	NULL,
+--	cate	VARCHAR2(1000)	NULL,
+--	prfplcnm	VARCHAR2(1000)	NULL,
+--	seatcnt	NUMBER	NULL
+--);
+
+
+CREATE TABLE TBL_User ( 
+	user_id VARCHAR2(1000) 	PRIMARY KEY,
+	user_pw VARCHAR2(1000)	NULL,
+	user_name VARCHAR2(1000)	NULL,
+	user_phone VARCHAR2(1000)NULL,
+	user_email VARCHAR2(1000)	NULL
+);
+
+INSERT INTO TBL_User VALUES('user01','pw1234','betty','010-1234-1234','betty01@email.com');
+INSERT INTO TBL_User VALUES('user02','pw1234','김영도','010-5432-1234','?????@email.com');
+INSERT INTO TBL_User VALUES('user03','pw1234','홍길동','010-4656-5455','???@email.com');
+INSERT INTO TBL_User VALUES('user04','pw1234','최길동','010-3333-4325','??????@email.com');
+INSERT INTO TBL_User VALUES('user05','pw1234','김길동','010-545-5542','?????@email.com');
+INSERT INTO TBL_User VALUES('user06','pw1234','가나다','010-8782-3274','??????@email.com');
+INSERT INTO TBL_User VALUES('user07','pw1234','choco','010-3412-3415','????@email.com');
+INSERT INTO TBL_User VALUES('user08','pw1234','michael','010-6653-9854','michael@email.com');
+INSERT INTO TBL_User VALUES('user09','pw1234','강인국','010-5685-8429','????@email.com');
+INSERT INTO TBL_User VALUES('user10','pw1234','박길동','010-6365-9525','dd@email.com');
+INSERT INTO TBL_User VALUES('user11','pw1234','김호이','010-3216-4211','????@email.com');
+INSERT INTO TBL_User VALUES('user12','pw1234','구길동','010-9943-2324','????@email.com');
+INSERT INTO TBL_User VALUES('user13','pw1234','이길동','010-1234-1234','???@email.com');
+
+CREATE TABLE TBL_Like ( 
+	Like_no	NUMBER	 PRIMARY KEY,
+	user_id	VARCHAR2(1000)  NOT NULL,
+	prfid	    VARCHAR2(100)   NOT NULL,
+	prfnm	    VARCHAR2(1000)  NULL,
+	Like_date DATE
+    --FOREIGN KEY (user_id) REFERENCES TBL_User(user_id),
+    --FOREIGN KEY (prfid) REFERENCES TBL_Detail(prfid)
+);
+
+
+CREATE TABLE TBL_Ticketing ( 
+	Ticketing_no	NUMBER	PRIMARY KEY,
+	user_id VARCHAR2(1000),
+	prfid VARCHAR2(100),
+	prfnm	VARCHAR2(1000)	NULL,
+    price VARCHAR2(1000) NULL,
+    personCount VARCHAR2(100),
+	PreviewDate	DATE NULL,
+	TicketingDate DATE NULL
+    --FOREIGN KEY (user_id) REFERENCES TBL_User(user_id),
+    --FOREIGN KEY (prfid) REFERENCES TBL_Detail(prfid),
+    --FOREIGN KEY (Like_no) REFERENCES TBL_Like(Like_no)
+);
+
+CREATE TABLE TBL_Seen ( 
+	Seen_id	NUMBER	 NOT NULL,
+	user_id	VARCHAR2(1000)	NOT NULL,
+	prfid	    VARCHAR2(100) NOT NULL,
+	prfnm   	VARCHAR2(1000) NULL,
+	SeenDate	 DATE NULL
+    --FOREIGN KEY (user_id) REFERENCES TBL_User(user_id),
+    --FOREIGN KEY (prfid) REFERENCES TBL_Detail(prfid)
+);
+
+CREATE TABLE TBL_Review ( 
+	ReviewNum  NUMBER   PRIMARY KEY,
+	user_id	    VARCHAR2(1000) NOT NULL,
+	RTitle	        VARCHAR2(1000)	NULL,
+	RContent 	VARCHAR2(3000)	NULL,
+	Star	        VARCHAR2(100)	NULL,
+	RReadCount	NUMBER	NULL,
+	RCreateDate	DATE	NULL
+    --FOREIGN KEY (user_id) REFERENCES TBL_USER(user_id)
+);
+
+
+CREATE TABLE TBL_RCommnet ( 
+	RCommentNum	NUMBER	PRIMARY KEY,
+	ReviewNum	    NUMBER,
+    user_id            VARCHAR(1000) NOT NULL,
+	RCContent       VARCHAR2(3000)	NULL,
+	RCCreateDate    DATE NULL
+    --FOREIGN KEY (ReviewNum) REFERENCES TBL_Review(ReviewNum),
+    --FOREIGN KEY (user_id) REFERENCES TBL_USER(user_id)
+);
+
+
+
+CREATE TABLE TBL_Notice ( 
+	NoticeNum	NUMBER	PRIMARY KEY,
+	NTitile	    VARCHAR2(1000)	NULL,
+	NContent 	VARCHAR2(3000)	NULL,
+	NReadCount	NUMBER DEFAULT 0,
+	NCreateDate	DATE DEFAULT SYSDATE
+);
+
+CREATE TABLE TBL_Question ( 
+   NO NUMBER,
+    WRITER_ID VARCHAR2(2000), 
+   TITLE VARCHAR2(200), 
+   CONTENT VARCHAR2(2000), 
+   TYPE VARCHAR2(20), 
+   READCOUNT NUMBER DEFAULT 0, 
+    STATUS VARCHAR2(1) DEFAULT 'Y' CHECK (STATUS IN('Y', 'N')),
+    CREATE_DATE DATE DEFAULT SYSDATE, 
+    MODIFY_DATE DATE DEFAULT SYSDATE
+    --FOREIGN KEY (user_id) REFERENCES TBL_USER(user_id)
+);
+
+
+
+CREATE TABLE TBL_QComment ( 
+    NO NUMBER PRIMARY KEY,
+    BOARD_NO NUMBER,
+     WRITER_ID VARCHAR2(400),
+     CONTENT VARCHAR2(400),
+    STATUS VARCHAR2(1) DEFAULT 'Y' CHECK (STATUS IN ('Y', 'N')),
+    CREATE_DATE DATE DEFAULT SYSDATE,
+    MODIFY_DATE DATE DEFAULT SYSDATE
+    --FOREIGN KEY (QuestionNum) REFERENCES TBL_Question(QuestionNum)
+);
+
+
+DROP SEQUENCE SEQ_Like; 
+DROP SEQUENCE SEQ_Notice; 
+DROP SEQUENCE SEQ_Ticket; 
+DROP SEQUENCE SEQ_Que; 
+DROP SEQUENCE SEQ_QueCommen;
+DROP SEQUENCE SEQ_Rev; 
+DROP SEQUENCE SEQ_RevComment; 
+
+CREATE SEQUENCE SEQ_Like; 
+CREATE SEQUENCE SEQ_Ticket; 
+CREATE SEQUENCE SEQ_Notice; 
+CREATE SEQUENCE SEQ_Que;
+CREATE SEQUENCE SEQ_QueCommen;
+CREATE SEQUENCE SEQ_Rev;
+CREATE SEQUENCE SEQ_RevComment; 
+
+
